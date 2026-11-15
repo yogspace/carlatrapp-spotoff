@@ -1,3 +1,17 @@
+# Spot off
+
+Live: https://spotoff.carlatrapp.de
+
+## Deployment
+
+Push auf `main` → GitHub Actions ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) baut die App (`npm run build`) und legt den Build per rsync auf dem Hetzner-Server unter `/opt/apps/sites/spotoff.carlatrapp.de` ab. Ausgeliefert wird er dort von Caddy (Repo `proxy`, siehe Server-Handbuch) — ohne eigenen Container.
+
+Secrets im Repo: `HETZNER_HOST` (IPv4), `HETZNER_USER`, `HETZNER_SSH_KEY` (wie in den anderen Repos).
+
+Inhalte (Texte, Kameras) stehen in [`public/config.json`](public/config.json).
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

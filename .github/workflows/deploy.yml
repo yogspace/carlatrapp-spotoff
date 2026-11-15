@@ -1,0 +1,65 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Nie zwei Deploys gleichzeitig — sie würden sich beim Umschalten in die Quere
+# kommen.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  SITE: spotoff.carlatrapp.de
+
+jobs:
+  deploy:
+    name: Build and upload
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      # CI=false: Create React App behandelt sonst jede Lint-Warnung als Fehler.
+      # Die bestehenden Warnungen (Hook-Abhängigkeiten in App.js) sind bewusst
+      # nicht „repariert" — das könnte das Verhalten der App ändern.
+      - run: npm run build
+        env:
+          CI: false
+
+      - name: SSH-Zugang einrichten
+        run: |
+          install -m 700 -d ~/.ssh
+          echo "${{ secrets.HETZNER_SSH_KEY }}" > ~/.ssh/deploy
+          chmod 600 ~/.ssh/deploy
+          ssh-keyscan -H "${{ secrets.HETZNER_HOST }}" >> ~/.ssh/known_hosts
+
+      # Erst in einen Zwischenordner, dann umschalten: Bricht der Upload ab,
+      # bleibt die laufende Seite unberührt. Caddy liefert /opt/apps/sites aus
+      # (siehe Repo `proxy`).
+      - name: Hochladen und umschalten
+        run: |
+          SSH="ssh -i ~/.ssh/deploy ${{ secrets.HETZNER_USER }}@${{ secrets.HETZNER_HOST }}"
+          $SSH "mkdir -p /opt/apps/sites"
+          rsync -az --delete -e "ssh -i ~/.ssh/deploy" build/ \
+            "${{ secrets.HETZNER_USER }}@${{ secrets.HETZNER_HOST }}:/opt/apps/sites/$SITE.next/"
+          $SSH "set -e
+            cd /opt/apps/sites
+            rm -rf $SITE.old
+            if [ -d $SITE ]; then mv $SITE $SITE.old; fi
+            mv $SITE.next $SITE
+            rm -rf $SITE.old
+            ls -la $SITE | head -5"

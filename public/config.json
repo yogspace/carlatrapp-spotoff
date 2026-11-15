@@ -1,0 +1,174 @@
+{
+  "title": "Spot off",
+  "subTitle": "helfe mit die Kameras abszuschalten!",
+  "popup": {
+    "buttonLabel": "Info",
+    "introText": "<p>Ohje, du bist umzingelt von Überwachungskameras. Erlang Stück für Stück deine Privatsphäre zurück! Diese Website soll dich dabei unterstützen und dient als deine To-Do Liste. Jede Kamera zeigt dir eine Maßnahme, die du ergreifen kannst. Tippe die Kamera an, sobald du die Maßnahme erledigt hast. Am Ende soll keine Kamera übrig bleiben. Um die Maßnahmen durchzuführen kannst du die Website jederzeit verlassen und zu einem späteren Zeitpunkt zurückkehren. Dein Aktueller Stand wird gespeichert. Los gehts!</p>",
+    "infoText": "<p>Eine Hilfestellung wie du alle Maßnahmen umsetzt, findest du auf <a target='_blank' rel='noopener noreferrer' href='https://onlinesicherheit.at'>www.onlinesicherheit.at</a>; bei der Electronic Frontier Foundation unter <a target='_blank' rel='noopener noreferrer' href='https://ssd.eff.org'>https://ssd.eff.org</a> und auf der <a target='_blank' rel='noopener noreferrer' href='https://www.bsi.bund.de/'> Website des Bundesamt für Sicherheit in der Informationstechnik (BSI)</a>.</p>",
+    "deleteCookiesText": "Wenn du deine Cookies erfolgreich gelöscht hast, beginnt alles von vorne, sobald die Website neu geladen wurde.</p>"
+  },
+  "shareButton": {
+    "buttonLabel": "Teile die Website mit deinen Freunden!",
+    "title": "Spot Off",
+    "text": "Schau mal hier: Eine Website, die dich spielerisch daran erinnert, regelmäßig deine Browserdaten zu löschen.",
+    "url": "https://spotoff.carlatrapp.de"
+  },
+  "footer": {
+    "bgImage": "/images/cameras.webp"
+  },
+  "character": {
+    "states": [
+      { "id": 0, "src": "/images/character-1.webp" },
+      { "id": 1, "src": "/images/character-2.webp" },
+      { "id": 2, "src": "/images/character-3.webp" },
+      { "id": 3, "src": "/images/character-4.webp" },
+      { "id": 4, "src": "/images/character-5.webp" },
+      { "id": 5, "src": "/images/character-6.webp" },
+      { "id": 6, "src": "/images/character-7.webp" },
+      { "id": 7, "src": "/images/character-8.webp" },
+      { "id": 8, "src": "/images/character-9.webp" },
+      { "id": 9, "src": "/images/character-10.webp" },
+      { "id": 10, "src": "/images/character-11.webp" }
+    ],
+    "happy": "/images/character-11.webp"
+  },
+  "cards": [
+    {
+      "id": 1,
+      "src": "/images/cam-1.webp",
+      "width": "300px",
+      "height": "300px",
+      "position": {
+        "x": 95,
+        "y": 35
+      },
+      "text": {
+        "content": "Unbenutzte Apps löschen"
+      }
+    },
+    {
+      "id": 2,
+      "src": "/images/cam-7.webp",
+      "width": "200px",
+      "height": "200px",
+      "position": {
+        "x": 75,
+        "y": 5
+      },
+      "text": {
+        "content": "Zur Suchmaschine Qwant wechseln"
+      }
+    },
+    {
+      "id": 3,
+      "src": "/images/cam-2.webp",
+      "width": "190px",
+      "height": "383px",
+      "position": {
+        "x": 74,
+        "y": 97
+      },
+      "text": {
+        "content": "Softwareupdates durchführen"
+      }
+    },
+    {
+      "id": 4,
+      "src": "/images/cam-3.webp",
+      "width": "210px",
+      "height": "200px",
+      "position": {
+        "x": 94,
+        "y": 46
+      },
+      "rotation": 70,
+      "text": {
+        "content": "Geräteeinstellungen anpassen"
+      }
+    },
+    {
+      "id": 5,
+      "src": "/images/cam-6.webp",
+      "width": "163px",
+      "height": "165px",
+      "position": {
+        "x": 6,
+        "y": 70
+      },
+      "rotation": -90,
+      "text": {
+        "content": "Sichere Messengerdienste wie Signal verwenden"
+      }
+    },
+    {
+      "id": 6,
+      "src": "/images/cam-5.webp",
+      "width": "354px",
+      "height": "356px",
+      "position": {
+        "x": 9,
+        "y": 95
+      },
+      "rotation": -90,
+      "text": {
+        "content": "Starke Passwörter sowie einen Passwortmanager einrichten"
+      }
+    },
+    {
+      "id": 7,
+      "src": "/images/cam-4.webp",
+      "width": "200px",
+      "height": "152px",
+      "position": {
+        "x": 95,
+        "y": 10
+      },
+      "rotation": -20,
+      "text": {
+        "content": "Werbeblocker Plugin wie Adblock plus installieren"
+      }
+    },
+    {
+      "id": 8,
+      "src": "/images/cam-8.webp",
+      "width": "226px",
+      "height": "264px",
+      "position": {
+        "x": 9,
+        "y": 42
+      },
+      "rotation": 0,
+      "text": {
+        "content": "Behalte persönliche Daten für dich"
+      }
+    },
+    {
+      "id": 9,
+      "src": "/images/cam-9.webp",
+      "width": "287px",
+      "height": "318px",
+      "position": {
+        "x": 90,
+        "y": 56
+      },
+      "rotation": 210,
+      "text": {
+        "content": "Richte eine Erinnerung ein, um das Smartphone öfter auszuschalten"
+      }
+    },
+    {
+      "id": 10,
+      "src": "/images/cam-10.webp",
+      "width": "342px",
+      "height": "266px",
+      "position": {
+        "x": 15,
+        "y": 6
+      },
+      "rotation": 20,
+      "text": {
+        "content": "Lösche deinen Browsercache und Cookies"
+      }
+    }
+  ]
+}
